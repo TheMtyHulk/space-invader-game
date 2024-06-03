@@ -2,6 +2,7 @@ import pygame
 import os
 import time
 import random
+from pygame import mixer 
 pygame.font.init()
 
 WIDTH, HEIGHT = 1000, 1000
@@ -245,8 +246,19 @@ def main():
 
 def main_menu():
     title_font = pygame.font.SysFont("comicsans", 70)
+    mixer.init()
+    mixer.music.load('assets/star wars theme song.mp3')
+ 
+    # Setting the volume 
+    mixer.music.set_volume(0.7) 
+    
+    
     run = True
+    
     while run:
+        # Start playing the song 
+        mixer.music.play()
+                
         WIN.blit(BG, (0,0))
         title_label = title_font.render("Press the mouse to begin...", 1, (255,255,255))
         WIN.blit(title_label, (WIDTH/2 - title_label.get_width()/2, 350))
