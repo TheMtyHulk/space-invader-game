@@ -4,9 +4,9 @@ import time
 import random
 pygame.font.init()
 
-WIDTH, HEIGHT = 750, 750
+WIDTH, HEIGHT = 1000, 1000
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Space Shooter Tutorial")
+pygame.display.set_caption("Space invader")
 
 # Load images
 RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_red_small.png"))
@@ -150,7 +150,7 @@ def collide(obj1, obj2):
 
 def main():
     run = True
-    FPS = 60
+    FPS = 144
     level = 0
     lives = 5
     main_font = pygame.font.SysFont("comicsans", 50)
